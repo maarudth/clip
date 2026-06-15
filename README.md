@@ -4,6 +4,8 @@
 account, no server, no upload. Your footage never leaves your machine — it's one
 self‑contained `index.html` with **zero build step and zero dependencies**.
 
+### ▶ [Try it live → maarudth.github.io/clip](https://maarudth.github.io/clip/)
+
 ![Clip video editor](screenshot.png)
 
 ## Highlights
@@ -24,6 +26,7 @@ self‑contained `index.html` with **zero build step and zero dependencies**.
 
 It's just one file. Either:
 
+- **[Use the hosted version](https://maarudth.github.io/clip/)** — nothing to download, **or**
 - **Open `index.html` directly** in a modern browser (double‑click it), **or**
 - Serve it over `http://localhost` for the smoothest experience:
 
