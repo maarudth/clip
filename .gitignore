@@ -13,3 +13,4 @@ keyframes-backup-options.json
 *.webm
 *.gif
 !screenshot.png
+!demo.gif

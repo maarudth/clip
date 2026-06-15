@@ -6,7 +6,7 @@ self‑contained `index.html` with **zero build step and zero dependencies**.
 
 ### ▶ [Try it live → maarudth.github.io/clip](https://maarudth.github.io/clip/)
 
-![Clip video editor](screenshot.png)
+![Clip video editor — timeline, keyframe zoom/pan, transitions and titles](demo.gif)
 
 ## Highlights
 
