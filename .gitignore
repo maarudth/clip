@@ -1,0 +1,15 @@
+# OS / editor cruft
+.DS_Store
+Thumbs.db
+*.swp
+.vscode/
+.idea/
+
+# one-off local rescue dump — not part of the app
+keyframes-backup-options.json
+
+# stray media / scratch
+*.mp4
+*.webm
+*.gif
+!screenshot.png
