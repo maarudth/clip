@@ -24,10 +24,10 @@ self‑contained `index.html` with **zero build step and zero dependencies**.
 
 ## Run it
 
-It's just one file, but **how you open it matters** for video playback (see the box below). In order of preference:
+It's just one file. In order of preference:
 
 - **[Use the hosted version](https://maarudth.github.io/clip/)** — nothing to download, works everywhere. **or**
-- **Serve it locally over `http://localhost`** — best if you've cloned the repo. Pick whichever you have installed:
+- **Serve it locally over `http://localhost`** — recommended if you've cloned the repo. Pick whichever you have installed:
 
   ```bash
   # Option A — Python (ships with macOS/Linux; on Windows install from python.org)
@@ -42,16 +42,12 @@ It's just one file, but **how you open it matters** for video playback (see the 
   Run the command **from inside the `video-editor` folder** (the one containing `index.html`).
   Leave that terminal window open while you work — it *is* the server. Close it to stop.
 
+You can also just double‑click `index.html` to open it directly — that works too;
+serving over `http://localhost` is only recommended because it avoids `file://` origin
+quirks and is required for browser extensions to attach to the page.
+
 Then click **＋ Add video** (or drag video files onto the window) and start editing.
 
-> ### ⚠️ Don't just double‑click `index.html`
-> Opening the file directly gives it a `file://` address, which browsers treat as an
-> isolated, locked‑down origin. Video **may play for a second and then freeze** while the
-> timeline keeps moving (the decoder stalls), and you'll see a console error about
-> *"`file:` URLs are treated as unique security origins."* Serving over `http://localhost`
-> (or using the hosted version) fixes this completely — that's why the steps above are
-> recommended. It's also required for browser extensions to attach to the page.
->
 > **Heads‑up:** saved projects are stored *per address*. A project saved while running on
 > `http://localhost:8000` won't appear on `http://localhost:3000` or on the hosted site —
 > keep using the same URL, and always keep your original source files.
