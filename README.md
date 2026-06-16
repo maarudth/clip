@@ -1,7 +1,7 @@
 # ◢ Clip — a browser video editor in a single HTML file
 
 **Clip** is a complete video editor that runs entirely in your browser. No install, no
-account, no server, no upload. Your footage never leaves your machine — it's one
+account, no backend, no upload. Your footage never leaves your machine — it's one
 self‑contained `index.html` with **zero build step and zero dependencies**.
 
 ### ▶ [Try it live → maarudth.github.io/clip](https://maarudth.github.io/clip/)
@@ -24,19 +24,37 @@ self‑contained `index.html` with **zero build step and zero dependencies**.
 
 ## Run it
 
-It's just one file. Either:
+It's just one file, but **how you open it matters** for video playback (see the box below). In order of preference:
 
-- **[Use the hosted version](https://maarudth.github.io/clip/)** — nothing to download, **or**
-- **Open `index.html` directly** in a modern browser (double‑click it), **or**
-- Serve it over `http://localhost` for the smoothest experience:
+- **[Use the hosted version](https://maarudth.github.io/clip/)** — nothing to download, works everywhere. **or**
+- **Serve it locally over `http://localhost`** — best if you've cloned the repo. Pick whichever you have installed:
 
   ```bash
-  # any static server works — for example:
+  # Option A — Python (ships with macOS/Linux; on Windows install from python.org)
   python -m http.server 8000
-  # then open http://localhost:8000/index.html
+  #   …then open  http://localhost:8000/index.html
+
+  # Option B — Node.js (no install needed, npx fetches it on the fly)
+  npx serve
+  #   …it prints a URL like http://localhost:3000 — open that
   ```
 
+  Run the command **from inside the `video-editor` folder** (the one containing `index.html`).
+  Leave that terminal window open while you work — it *is* the server. Close it to stop.
+
 Then click **＋ Add video** (or drag video files onto the window) and start editing.
+
+> ### ⚠️ Don't just double‑click `index.html`
+> Opening the file directly gives it a `file://` address, which browsers treat as an
+> isolated, locked‑down origin. Video **may play for a second and then freeze** while the
+> timeline keeps moving (the decoder stalls), and you'll see a console error about
+> *"`file:` URLs are treated as unique security origins."* Serving over `http://localhost`
+> (or using the hosted version) fixes this completely — that's why the steps above are
+> recommended. It's also required for browser extensions to attach to the page.
+>
+> **Heads‑up:** saved projects are stored *per address*. A project saved while running on
+> `http://localhost:8000` won't appear on `http://localhost:3000` or on the hosted site —
+> keep using the same URL, and always keep your original source files.
 
 ## Keyboard shortcuts
 
